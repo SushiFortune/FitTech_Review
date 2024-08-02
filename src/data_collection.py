@@ -10,7 +10,11 @@ def get_review_score(api_key, sku):
     response = requests.get(url, params=params)
     if response.status_code == 200:
         data = response.json()
-        return data['products'][0]['customerReviewAverage']
+        print(data)  # Add this line to print the response
+        if 'products' in data and len(data['products']) > 0:
+            return data['products'][0]['customerReviewAverage']
+        else:
+            return None
     else:
         return None
     
