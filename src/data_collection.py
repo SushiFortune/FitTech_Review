@@ -1,22 +1,26 @@
 import requests
 from config import api_key
 
-def get_review_score(sku):
-    url = f"https://api.bestbuy.com/v1/products(sku={sku})"
+def search_fitbit_sense_2():
+    url = "https://api.bestbuy.com/v1/products(search=fitbit sense 2)?format=json"
     params = {
         'apiKey': api_key,
-        'format': 'json',
-        'show': 'customerReviewAverage'
+        'show': 'sku,name,salePrice,customerReviewAverage'
     }
     response = requests.get(url, params=params)
     if response.status_code == 200:
         data = response.json()
-        if 'products' in data and len(data['products']) > 0:
-            return data['products'][0]['customerReviewAverage']
-        else:
-            return None
+        return data['products']
     else:
         return None
+
+products = search_fitbit_sense_2()
+if products:
+    for product in products:
+        print(f"Name: {product['name']}, Rating: {product.get('customerReviewAverage', 'No rating available')}")
+else:
+    print("No products found.")
+
 
     
 
