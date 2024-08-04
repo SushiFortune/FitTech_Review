@@ -9,7 +9,7 @@ def format_model_name(user_input):
     if len(words) > 1:
         formatted_model_name = words[0] + " - " + " ".join(words[1:])
     else:
-        formatted_model_name = user_input
+        return None
     return formatted_model_name
 
 def search_model(user_input):

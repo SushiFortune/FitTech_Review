@@ -9,9 +9,16 @@ def index():
 
 @app.route('/get_reviews', methods=['GET'])
 def get_reviews():
-    model_name = request.args.get('model_name')
-    if not model_name:
-        return jsonify({'error': 'Model name is required'}), 400
+    user_input = request.args.get('model_name')
+    if not user_input:
+        return render_template('index.html', error='Model name is required')
+
+    # Use the format_model_name function to format the user input
+    model_name = data_collection.format_model_name(user_input)
+
+    # Check if the model name was formatted correctly
+    if model_name is None:
+        return render_template('index.html', error='Invalid model name format. Please try again.')
 
     products = data_collection.search_model(model_name)
     if products:
@@ -25,7 +32,7 @@ def get_reviews():
         ]
         return jsonify(product_reviews)
     else:
-        return jsonify({'error': 'No products found'})
+        return render_template('index.html', error='No products found. Please enter a valid model.')
 
 if __name__ == '__main__':
     app.run(debug=True)
