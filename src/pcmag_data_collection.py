@@ -8,7 +8,7 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 def get_rating():
     service = Service(EdgeChromiumDriverManager().install())
     driver = webdriver.Edge(service=service)
-    driver.get('https://www.pcmag.com/reviews/fitbit-inspire-3')
+    driver.get('https://www.pcmag.com/reviews/fitbit-sense-2')
 
     try:
         # Wait for the rating element to be present
