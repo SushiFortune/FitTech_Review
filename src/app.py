@@ -12,8 +12,6 @@ def index():
 
 def get_reviews():
     user_input = request.args.get('model_name')
-    if not user_input:
-        return render_template('index.html', error='Model name is required')
 
     #Fetch products data from bestbuy
     products, error = bestbuy_data_collection.search_model(user_input)
