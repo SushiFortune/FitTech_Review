@@ -15,15 +15,11 @@ def get_reviews():
     if not user_input:
         return render_template('index.html', error='Model name is required')
 
-    #Format the user input
-    model_name = bestbuy_data_collection.format_model_name(user_input)
-
-    #Check if the model name was formatted correctly
-    if model_name is None:
-        return render_template('index.html', error='Invalid model name format. Please try again.')
-    
     #Fetch products data from bestbuy
-    products = bestbuy_data_collection.search_model(model_name)
+    products, error = bestbuy_data_collection.search_model(user_input)
+    
+    if error:
+        return render_template('index.html', error=error)
     
     if not products:
         return render_template('index.html', error='No products found. Please enter a valid model.')
