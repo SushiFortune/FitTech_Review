@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, render_template
 import bestbuy_data_collection
+import pcmag_data_collection
 
 app = Flask(__name__)
 
@@ -26,10 +27,19 @@ def get_reviews():
             {
                 'sku': product['sku'],
                 'name': product['name'],
-                'rating': product.get('customerReviewAverage', 'No rating available')
+                'BestBuy_rating': product.get('customerReviewAverage', 'No rating available')
             }
             for product in products
         ]
+
+        # Fetch PCMag rating
+        pcmag_rating = pcmag_data_collection.get_rating()
+
+        # Add PCMag rating to the response
+        for review in product_reviews:
+            review['PCMag_rating'] = pcmag_rating
+
+
         return jsonify(product_reviews)
     else:
         return render_template('index.html', error='No products found. Please enter a valid model.')

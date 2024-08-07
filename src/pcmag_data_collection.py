@@ -16,9 +16,11 @@ def get_rating():
             EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/main/div/header/div/div[1]/div[2]'))
         )
         rating = rating_element.text.strip()
-        print(f'Review Rating: {rating}')
+        #print(f'Review Rating: {rating}')
+        return rating
     except Exception as e:
-        print(f'An error occurred: {e}')
+        #print(f'An error occurred: {e}')
+        return None
     finally:
         driver.quit()
 
