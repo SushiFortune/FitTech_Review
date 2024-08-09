@@ -23,7 +23,7 @@ def get_reviews():
         return render_template('index.html', error='No products found. Please enter a valid model.')
     
     #Fetch PCMag rating
-    pcmag_rating = pcmag_data_collection.get_rating()
+    pcmag_rating = pcmag_data_collection.get_rating(user_input)
 
    
     product_reviews = [

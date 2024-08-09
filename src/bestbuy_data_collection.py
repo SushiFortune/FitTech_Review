@@ -18,7 +18,7 @@ def fetch_product_data(model_name):
 
 def search_model(user_input):
     # Format the user input
-    model_name = format(user_input)
+    model_name = format(user_input, 0)
     if not model_name:
         return None, "Invalid model name format."
     
