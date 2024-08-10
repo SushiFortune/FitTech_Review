@@ -1,9 +1,13 @@
-
+import re
 def format(user_input,id):
-    user_input = user_input.strip().lower()
-    if user_input.isalpha()!= True:
+    pattern = r'^[a-zA-Z0-9\s]+$'
+    test=bool(re.match(pattern,user_input))
+    # user_input = user_input.strip().lower()
+    # words=user_input.split()
+    if test==False:
         return None 
-        
+    
+
     else : 
         words=user_input.split()
 
