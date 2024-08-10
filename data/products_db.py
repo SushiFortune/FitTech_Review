@@ -5,17 +5,20 @@ def create_database_and_insert_models():
 
     db = client['wearable_fitness_trackers_db']
 
-    collection = db['popular_models']
+    collection = db['PCMag models XPATH']
     
     collection.create_index([("name", 1)], unique=True)
     
   
     popular_models = [
-        {"name": "Fitbit Charge 6"},
-        {"name": "Fitbit Versa 4"},
-        {"name": "Fitbit Sense 2"},
-        {"name": "Fitbit Inspire 3"},
-        {"name": "Fitbit Ace"}
+        {"name": "Fitbit Ace 3", "xpath": "/html/body/div[2]/div/main/div/header/div/div[1]/div[2]"},
+        {"name": "Fitbit Luxe", "xpath": "/html/body/div[3]/div/main/div/header/div/div[1]/div[2]"},
+        {"name": "Fitbit Charge 5", "xpath": "/html/body/div[3]/div/main/div/header/div/div[1]/div[2]"},
+        {"name": "Fitbit Versa 3", "xpath": "/html/body/div[3]/div/main/div/header/div/div[1]/div[2]"},
+        {"name": "Fitbit Sense 2", "xpath": "/html/body/div[2]/div/main/div/header/div/div[1]/div[2]"},
+        
+        
+
     ]
     
   
