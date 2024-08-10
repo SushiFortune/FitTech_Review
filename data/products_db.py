@@ -11,11 +11,11 @@ def create_database_and_insert_models():
     
   
     popular_models = [
-        {"model": "Fitbit LTE", "name": "Fitbit Ace LTE - Kids Smartwatch with In-App Calling, Messaging, GPS"},
-        {"model": "Fitbit Sense 2", "name": "Fitbit - Sense 2 Advanced Health Smartwatch"},
-        {"model": "Fitbit Inspire 3", "name": "Fitbit - Inspire 3 Health & Fitness Tracker"},
-        {"model": "Fitbit Versa 4", "name": "Fitbit - Versa 4 Fitness Smartwatch"},
-        {"model": "Fitbit Charge 6", "name": "Fitbit - Charge 6 Advanced Fitness & Health Tracker"},
+        {"model": "fitbit lte", "name": "Fitbit Ace LTE - Kids Smartwatch with In-App Calling, Messaging, GPS"},
+        {"model": "fitbit sense 2", "name": "Fitbit - Sense 2 Advanced Health Smartwatch"},
+        {"model": "fitbit inspire 3", "name": "Fitbit - Inspire 3 Health & Fitness Tracker"},
+        {"model": "fitbit versa 4", "name": "Fitbit - Versa 4 Fitness Smartwatch"},
+        {"model": "fitbit charge 6", "name": "Fitbit - Charge 6 Advanced Fitness & Health Tracker"},
         
         
 

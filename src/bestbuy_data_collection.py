@@ -4,6 +4,7 @@ from config import api_key
 
 
 def fetch_product_data(model_name):
+    model_name="fitbit - inspire 2"
     url = f"https://api.bestbuy.com/v1/products(search={model_name})?format=json"
     params = {
         'apiKey': api_key,
