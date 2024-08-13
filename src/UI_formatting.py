@@ -11,7 +11,8 @@ def format(user_input,id):
     else : 
         # Formatting for BestBuy
         if id==0: 
-            formatted_UI = BestBuy_get_name_by_model(user_input)
+            formatted_UI = user_input
+            # BestBuy_get_name_by_model(user_input)
             return formatted_UI
 
         # Formatting for PCMag
