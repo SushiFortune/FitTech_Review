@@ -16,12 +16,25 @@ def fetch_product_data(model_name):
     else:
         response.raise_for_status()
 
-# Test the function
 
-model_name = 'Fitbit Charge 6 Advanced Fitness Health Tracker'
+def filter_results(results, keywords):
+    filtered_results = []
+    for result in results:
+        for keyword in keywords:
+            if keyword.lower() in result.lower():
+                filtered_results.append(result)
+                break
+
+model_name = 'Fitbit - Versa 4 Fitness Smartwatch'
+
 try:
-    data = fetch_product_data(model_name)
+    results = fetch_product_data(model_name)
+    keywords = ["smartwatch", "tracker"]
+    filtered_results=filter_results(results,keywords)
+
     print("API Response:")
-    print(data)
+    for result in filtered_results:
+        print(result)
+
 except requests.exceptions.RequestException as e:
     print(f"An error occurred: {e}")
