@@ -22,7 +22,7 @@ def filter_data(data):
 
 def search_model(user_input):
 
-    model_name = format(user_input, 0)
+    model_name = format(user_input,'BestBuy')
     if not model_name:
         return None, "Invalid model name format."
     

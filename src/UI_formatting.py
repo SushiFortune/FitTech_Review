@@ -10,12 +10,12 @@ def format(user_input,id):
 
     else : 
         # Formatting for BestBuy
-        if id==0: 
+        if id=='BestBuy': 
             formatted_UI = user_input
             return formatted_UI
 
         # Formatting for PCMag
-        elif id==1:
+        elif id=='PCMag':
             words=user_input.split()
             s="-"
             formatted_UI = s.join(words)
