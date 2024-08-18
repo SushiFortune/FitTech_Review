@@ -3,6 +3,7 @@ from config import api_key
 from urllib.parse import quote
 
 def fetch_product_data(model_name):
+
     
     url = f"https://api.bestbuy.com/v1/products(search={model_name})?format=json"
     params = {
@@ -16,16 +17,17 @@ def fetch_product_data(model_name):
         response.raise_for_status()
 
 
-def filter_data(data):
-   keywords = ["smartwatch", "tracker"]
-   filtered_products = [product for product in data['products'] if any(keyword.lower() in product['name'].lower() for keyword in keywords)]
-   return filtered_products
+def filter_data(model_name, data):
+    keywords = ["smartwatch", "tracker"]
+    filtered_products_v1 = [product for product in data['products'] if model_name.lower() in product['name'].lower()]
+    filtered_products_v2 = [product for product in data['products'] if any(keyword.lower() in product['name'].lower() for keyword in keywords)]
+    return filtered_products_v2
 
 
 try:
-   model_name = 'Fitbit - Inspire 3'
-   data = fetch_product_data(model_name)
-   products=filter_data(data)
+   model_name = "fitbit inspire 2"
+   data= fetch_product_data(model_name)
+   products=filter_data(model_name, data)
    print(products)
 
 except requests.exceptions.RequestException as e:
