@@ -14,7 +14,7 @@ def get_reviews():
     user_input = request.args.get('model_name')
 
     #Fetch products data from bestbuy
-    products, error = bestbuy_data_collection.search_model(user_input)
+    products, error = bestbuy_data_collection.get_rating(user_input)
     
     if error:
         return render_template('index.html', error=error)
