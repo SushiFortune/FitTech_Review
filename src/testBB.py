@@ -3,7 +3,7 @@ from config import api_key
 
 
 def fetch_product_data(model_name):
-    model_name='garmin-fenix-7s-gps-smartwatch-42-mm-fiber-reinforced-polymer-silver'
+    # model_name='garmin-fenix-7s'
     url = f"https://api.bestbuy.com/v1/products(search={model_name})?format=json"
     
     params = {
@@ -24,9 +24,10 @@ def filter_data(model_name, data):
     return filtered_products_v1
 
 try:
-    model_name = 'Garmin - fēnix 7S'
-    data = fetch_product_data(model_name)
-    products=filter_data(model_name,data)
+    filtering_model_name='Garmin - forerunner 265'
+    fetching_model_name = 'garmin-forerunner-265'
+    data = fetch_product_data(fetching_model_name)
+    products=filter_data(filtering_model_name,data)
     print(products)
 
 except requests.exceptions.RequestException as e:
