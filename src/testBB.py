@@ -24,8 +24,8 @@ def filter_data(model_name, data):
     return filtered_products_v1
 
 try:
-    filtering_model_name='Fitbit - sense 2'
-    fetching_model_name = 'fitbit-sense-2'
+    filtering_model_name='Garmin - instinct 2'
+    fetching_model_name = 'garmin-instinct-2'
     data = fetch_product_data(fetching_model_name)
     products=filter_data(filtering_model_name,data)
     print(products)

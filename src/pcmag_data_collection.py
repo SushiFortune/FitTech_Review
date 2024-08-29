@@ -7,7 +7,7 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from UI_formatting import format
 
 def get_rating(user_input):
-    model_name=format(user_input,'PCMag')
+    model_name=format(user_input,'PCMag','default')
     service = Service(EdgeChromiumDriverManager().install())
     driver = webdriver.Edge(service=service)
     driver.get(f'https://www.pcmag.com/reviews/{model_name}')
