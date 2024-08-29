@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, render_template
 import bestbuy_fitbit_data_collection
+import bestbuy_garmin_data_collection
 import pcmag_data_collection
 
 app = Flask(__name__)
@@ -14,7 +15,7 @@ def get_reviews():
     user_input = request.args.get('model_name')
 
     #Fetch products data from bestbuy
-    products, error = bestbuy_fitbit_data_collection.get_rating(user_input)
+    products, error = bestbuy_garmin_data_collection.get_rating(user_input)
     
     if error:
         return render_template('index.html', error=error)

@@ -18,8 +18,8 @@ def fetch_product_data(model_name):
 def filter_data(model_name, data):
     keywords = ["smartwatch", "gps"]
     filtered_products_v1 = [product for product in data['products'] if model_name.lower() in product['name'].lower()]
-    filtered_products_v2 = [product for product in filtered_products_v1 if any(keyword.lower() in product['name'].lower() for keyword in keywords)]
-    return filtered_products_v2
+    #filtered_products_v2 = [product for product in filtered_products_v1 if any(keyword.lower() in product['name'].lower() for keyword in keywords)]
+    return filtered_products_v1
 
 def get_rating(user_input):
 

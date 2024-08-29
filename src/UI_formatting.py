@@ -1,8 +1,7 @@
 import re
 
-
 def format(user_input,id,type):
-    pattern = r'^[a-zA-Zí][a-zA-Z0-9\sí]*$'
+    pattern = r'^[a-zA-Zíē][a-zA-Z0-9\síē]*$' 
     test=bool(re.match(pattern,user_input))
     print(test)
     if test==False:
