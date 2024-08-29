@@ -23,7 +23,7 @@ def get_reviews():
         return render_template('index.html', error='No products found. Please enter a valid model.')
     
     #Fetch PCMag rating
-    pcmag_rating =pcmag_data_collection.get_rating(user_input)
+    # pcmag_rating =pcmag_data_collection.get_rating(user_input)
     
         
     product_BestBuyRating = [
@@ -36,14 +36,14 @@ def get_reviews():
         
     ]
 
-    product_PCMagRating = [
-        {
-            'PCMag_rating': pcmag_rating
-        }
-    ]
+    # product_PCMagRating = [
+    #     {
+    #         'PCMag_rating': pcmag_rating
+    #     }
+    # ]
 
      
-    return jsonify(product_BestBuyRating, product_PCMagRating)
+    # return jsonify(product_BestBuyRating, product_PCMagRating)
     return jsonify(product_BestBuyRating)
 
 if __name__ == '__main__':
