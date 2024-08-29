@@ -1,4 +1,5 @@
 import requests
+import re
 from config import api_key
 
 
@@ -24,11 +25,12 @@ def filter_data(model_name, data):
     return filtered_products_v1
 
 try:
-    filtering_model_name='Garmin - instinct 2'
-    fetching_model_name = 'garmin-instinct-2'
+    filtering_model_name='Garmin - vívoactive 5'
+    fetching_model_name = 'garmin-vivoactive-5-gps-smartwatch'
     data = fetch_product_data(fetching_model_name)
     products=filter_data(filtering_model_name,data)
     print(products)
+
 
 except requests.exceptions.RequestException as e:
     print(f"An error occurred: {e}")
