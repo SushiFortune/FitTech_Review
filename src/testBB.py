@@ -20,16 +20,18 @@ def fetch_product_data(model_name):
 
 def filter_data(model_name, data):
     starting_index=len(model_name)+1
-    end_index=starting_index+3
+    end_index_for_gps=starting_index+3
+    end_index_for_smartwatch=starting_index+10
+
     filtered_products_v2=[]
-    keywords = ["smartwatch", "gps"]
 
     filtered_products_v1 = [product for product in data['products'] if model_name.lower() in product['name'].lower()]
     
     for product in filtered_products_v1:
         product_name=product['name']
-        keyword = product_name[starting_index:end_index].lower()
-        if keyword=="gps":
+        keyword_1 = product_name[starting_index:end_index_for_gps].lower()
+        keyword_2= product_name[starting_index:end_index_for_smartwatch].lower()
+        if keyword_1=="gps" or keyword_2=="smartwatch":
             filtered_products_v2+=[product]
         
     return filtered_products_v2
