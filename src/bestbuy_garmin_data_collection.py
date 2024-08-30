@@ -45,7 +45,6 @@ def filter_data(filtering_model_name, data):
             filtered_products_v2+=[product]
         
         else:
-            print("wrong model format")
             continue
 
     return filtered_products_v2
