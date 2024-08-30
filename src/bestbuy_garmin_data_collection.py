@@ -38,7 +38,7 @@ def filter_data(filtering_model_name, data):
         if "garmin - instinct 2" in product_name:
             keyword_3 = product_name[starting_index:end_index_for_instinct2_size]
             keyword_4= product_name[starting_index:end_index_for_instinct2_tactical]
-            if keyword_1=="gps" or keyword_2=="smartwatch" or keyword_3=="4" or keyword_4=="tactical":
+            if keyword_1=="gps" or keyword_2=="smartwatch" or keyword_3.isdigit() or keyword_4=="tactical":
                 filtered_products_v2+=[product]
 
         elif keyword_1=="gps" or keyword_2=="smartwatch" or filtering_model_name=='garmin - epix pro':
