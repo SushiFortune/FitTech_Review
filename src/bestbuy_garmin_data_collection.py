@@ -16,10 +16,21 @@ def fetch_product_data(model_name):
         response.raise_for_status()
 
 def filter_data(model_name, data):
+    starting_index=len(model_name)+1
+    end_index=starting_index+3
+
     keywords = ["smartwatch", "gps"]
     filtered_products_v1 = [product for product in data['products'] if model_name.lower() in product['name'].lower()]
-    #filtered_products_v2 = [product for product in filtered_products_v1 if any(keyword.lower() in product['name'].lower() for keyword in keywords)]
-    return filtered_products_v1
+    filtered_products_v2=[]
+    for product in filtered_products_v1:
+        product_name=product['name'].lower()
+        keyword = product_name.Substring(starting_index, end_index).lower()
+
+        if keyword=="gps":
+            filtered_products_v2+=product
+        else:
+            continue 
+    return filtered_products_v2
 
 def get_rating(user_input):
 

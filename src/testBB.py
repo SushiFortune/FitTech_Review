@@ -19,14 +19,25 @@ def fetch_product_data(model_name):
         response.raise_for_status()
 
 def filter_data(model_name, data):
-    keywords = ["smartwatch", "tracker"]
+    starting_index=len(model_name)+1
+    end_index=starting_index+3
+    filtered_products_v2=[]
+    keywords = ["smartwatch", "gps"]
+
     filtered_products_v1 = [product for product in data['products'] if model_name.lower() in product['name'].lower()]
-    # filtered_products_v2 = [product for product in filtered_products_v1 if any(keyword.lower() in product['name'].lower() for keyword in keywords)]
-    return filtered_products_v1
+    
+    for product in filtered_products_v1:
+        product_name=product['name']
+        keyword = product_name[starting_index:end_index].lower()
+        if keyword=="gps":
+            filtered_products_v2+=[product]
+        
+    return filtered_products_v2
+
 
 try:
-    filtering_model_name='Garmin - vívoactive 5'
-    fetching_model_name = 'garmin-vivoactive-5-gps-smartwatch'
+    filtering_model_name='Garmin - venu 3'
+    fetching_model_name = 'garmin-venu-3'
     data = fetch_product_data(fetching_model_name)
     products=filter_data(filtering_model_name,data)
     print(products)
