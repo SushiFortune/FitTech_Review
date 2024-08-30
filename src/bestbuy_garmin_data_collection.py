@@ -16,13 +16,14 @@ def fetch_product_data(fetching_model_name):
         response.raise_for_status()
 
 def filter_data(filtering_model_name, data):
+
     starting_index=len(filtering_model_name) + 1
 
     end_index_for_gps=starting_index + 3
     end_index_for_smartwatch=starting_index + 10
     end_index_for_instinct2_size=starting_index + 1
     end_index_for_instinct2_tactical=starting_index + 8
-#    Garmin instinct 2 solar tactical
+
 
     filtered_products_v2=[]
 

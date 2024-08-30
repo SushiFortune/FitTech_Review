@@ -10,16 +10,24 @@ def format(user_input,id,type):
 
     else : 
         # Formatting for BestBuy
-        if id=='BestBuy' and type=='Filtering': 
-           words = user_input.split()
-           formatted_UI= words[0]+ " - " +' '.join(words[1:])
-           return formatted_UI
-        
+    
+
+        if (id=='BestBuy' and type=='Filtering'): 
+
+            if user_input=="garmin vivoactive 5":
+                return "garmin - vívoactive 5"
+            
+            else:
+                words = user_input.split()
+                formatted_UI= words[0]+ " - " +' '.join(words[1:])
+                return formatted_UI
+    
         elif (id=='BestBuy' and type=='Fetching') :
             words=user_input.split()
             s="-"
             formatted_UI = s.join(words)
-            return formatted_UI
+            formatted_UI
+            return formatted_UI+"-smartwatch"
         
         elif (id=='PCMag' and type=='default'):
             words=user_input.split()
