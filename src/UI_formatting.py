@@ -1,6 +1,7 @@
 import re
 
 def format(user_input,id,type):
+    user_input=user_input.lower()
     pattern = r'^[a-zA-Zíē][a-zA-Z0-9\síē]*$' 
     test=bool(re.match(pattern,user_input))
     print(test)
@@ -16,6 +17,13 @@ def format(user_input,id,type):
 
             if user_input=="garmin vivoactive 5":
                 return "garmin - vívoactive 5"
+            
+            if user_input=="garmin fenix 7s":
+                return "garmin - fēnix 7s"
+            
+            if user_input=="garmin fenix 7x sapphire solar":
+                return "garmin - fēnix 7x  sapphire solar"
+            
             
             else:
                 words = user_input.split()

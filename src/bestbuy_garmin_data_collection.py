@@ -27,7 +27,7 @@ def filter_data(filtering_model_name, data):
 
     filtered_products_v2=[]
 
-    filtered_products_v1 = [product for product in data['products'] if filtering_model_name.lower() in product['name'].lower()]
+    filtered_products_v1 = [product for product in data['products'] if filtering_model_name in product['name'].lower()]
     
     for product in filtered_products_v1:
 

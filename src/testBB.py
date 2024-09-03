@@ -34,12 +34,12 @@ def filter_data(model_name, data):
         if keyword_1=="gps" or keyword_2=="smartwatch":
             filtered_products_v2+=[product]
         
-    return filtered_products_v1
+    return filtered_products_v2
 
 
 try:
-    filtering_model_name='Garmin - vívoactive 5'
-    fetching_model_name = 'garmin-vivoactive-5-smartwatch'
+    filtering_model_name='garmin - fenix 7X Pro Sapphire solar'
+    fetching_model_name = 'garmin-fenix-7x-pro-sapphire-solar-smartwatch'
     data = fetch_product_data(fetching_model_name)
     products=filter_data(filtering_model_name,data)
     print(products)
