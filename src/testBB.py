@@ -39,7 +39,7 @@ def filter_data(model_name, data):
 
 try:
     filtering_model_name='garmin - vívomove trend hybrid'
-    fetching_model_name = 'garmin-vivomove-trend-hybrid-smartwatch'
+    fetching_model_name = 'garmin-vivomove-trend-smartwatch'
     data = fetch_product_data(fetching_model_name)
     products=filter_data(filtering_model_name,data)
     print(products)
