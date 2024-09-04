@@ -18,6 +18,9 @@ def format(user_input,id,type):
             if user_input=="garmin vivoactive 5":
                 return "garmin - vívoactive 5"
             
+            if user_input=="garmin vivomove trend hybrid":
+                return "garmin - vívomove trend hybrid"
+            
             if user_input=="garmin fenix 7s":
                 return "garmin - fēnix 7s"
             
